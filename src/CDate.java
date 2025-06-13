@@ -14,13 +14,15 @@ public class CDate extends GregorianCalendar
 		init();
 	}
 
-	public CDate(int p_jour, int p_mois, int p_annee)
-	{
-		// TODO ajout de contrôles de validité de date
-                this.set(Calendar.DAY_OF_MONTH, p_jour);
-                this.set(Calendar.MONTH,        p_mois-1);
-                this.set(Calendar.YEAR,         p_annee);
-	}
+       public CDate(int p_jour, int p_mois, int p_annee)
+       {
+               // TODO ajout de contrôles de validité de date
+               if (p_mois < 1 || p_mois > 12)
+                       throw new IllegalArgumentException("Invalid month: " + p_mois);
+               this.set(Calendar.DAY_OF_MONTH, p_jour);
+               this.set(Calendar.MONTH,        p_mois-1);
+               this.set(Calendar.YEAR,         p_annee);
+       }
 	
 	public CDate(Calendar p_calendar) 
 	{
