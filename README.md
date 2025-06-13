@@ -4,7 +4,7 @@ Logiciel de gestion de stock de semences de plantes
 En cours de développement
 --------
 
-Logiciels nécéssaires
+Logiciels nécessaires
 -----------------------
 Sous Windows 7 64 bits
 -----------------------
