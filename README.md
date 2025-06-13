@@ -28,3 +28,12 @@ Sous Windows 7 64 bits
  - PostgreSQL 9.4.1-3 x64
  - StockSemence.jar (obtenu après compilation des sources, non disponible au moment de la première publication github)
  - scripts d'installation sur BDD (contenus dans le dossier postgres)
+
+## Tests
+
+Ce projet utilise Maven pour lancer les tests unitaires.
+Vous pouvez exécuter les tests avec :
+
+```bash
+mvn test
+```
