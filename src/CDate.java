@@ -17,9 +17,9 @@ public class CDate extends GregorianCalendar
 	public CDate(int p_jour, int p_mois, int p_annee)
 	{
 		// TODO ajout de contrôles de validité de date
-		this.set(Calendar.DAY_OF_MONTH, p_jour);
-		this.set(Calendar.MONTH,        p_mois);
-		this.set(Calendar.YEAR,         p_annee);				
+                this.set(Calendar.DAY_OF_MONTH, p_jour);
+                this.set(Calendar.MONTH,        p_mois-1);
+                this.set(Calendar.YEAR,         p_annee);
 	}
 	
 	public CDate(Calendar p_calendar) 
@@ -34,10 +34,10 @@ public class CDate extends GregorianCalendar
 
 	public void init()
 	{
-		// initialisation au 01/01/2000
-		this.set(Calendar.DAY_OF_MONTH, 1);
-		this.set(Calendar.MONTH,        1);
-		this.set(Calendar.YEAR,      2000);		
+                // initialisation au 01/01/2000
+                this.set(Calendar.DAY_OF_MONTH, 1);
+                this.set(Calendar.MONTH,        0);
+                this.set(Calendar.YEAR,      2000);
 	}
 
 	public void init_calendar(Calendar p_calendar)
