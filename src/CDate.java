@@ -16,9 +16,23 @@ public class CDate extends GregorianCalendar
 
        public CDate(int p_jour, int p_mois, int p_annee)
        {
-               // TODO ajout de contrôles de validité de date
+               if (p_annee <= 0)
+               {
+                       throw new IllegalArgumentException("Invalid year: " + p_annee);
+               }
+
                if (p_mois < 1 || p_mois > 12)
+               {
                        throw new IllegalArgumentException("Invalid month: " + p_mois);
+               }
+
+               int l_max_jour = new GregorianCalendar(p_annee, p_mois - 1, 1).getActualMaximum(Calendar.DAY_OF_MONTH);
+
+               if (p_jour < 1 || p_jour > l_max_jour)
+               {
+                       throw new IllegalArgumentException("Invalid day: " + p_jour + " for month " + p_mois + " and year " + p_annee);
+               }
+
                this.set(Calendar.DAY_OF_MONTH, p_jour);
                this.set(Calendar.MONTH,        p_mois-1);
                this.set(Calendar.YEAR,         p_annee);
